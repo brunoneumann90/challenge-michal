@@ -1,11 +1,14 @@
-<h1>All books</h1>
+<div class="container">
+  <h2>All books</h2>
 
-<% @records.each do |record| %>
-  <p><%= "#{record.book.title} by #{record.author.full_name}" %></p>
-  <p><%= record.book.price %></p>
-  <p><%= record.book.published %></p>
-  <p><%= record.book.quantity %></p>
-  <%= link_to "Edit Book", edit_book_path(record.book) if policy(record.book).edit? %>
-  <%= link_to "Edit Author", edit_author_path(record.author) if policy(record.author).edit? %>
-  <hr>
-<% end %>
+  <% @records.each do |record| %>
+    <p><span>Author:</span> <%= "#{record.author.full_name}" %></p>
+    <p><span>Book:</span> <%= "#{record.book.title}" %></p>
+    <p><span>Price:</span> U$<%= record.book.price %></p>
+    <p><span>Published?</span> <%= record.book.published %></p>
+    <p><span>Quantity:</span> <%= record.book.quantity %></p>
+    <%= link_to "Edit Book", edit_book_path(record.book) if policy(record.book).edit? %>
+    <%= link_to "Edit Author", edit_author_path(record.author) if policy(record.author).edit? %>
+    <hr>
+  <% end %>
+</div>
