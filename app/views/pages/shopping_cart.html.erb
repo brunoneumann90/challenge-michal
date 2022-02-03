@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>Shopping Cart</h2>
+  <% @orders.each do |order| %>
+      <p><span>Author:</span> <%= "#{order.authors_book.author.full_name}" %></p>
+      <p><span>Book:</span> <%= "#{order.authors_book.book.title}" %></p>
+      <p><span>Price:</span> U$<%= order.authors_book.book.price %></p>
+      <hr>
+    <% end %>
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>Buy your books</h2>
+
+  <% @records.each do |record| %>
+    <p><span>Author:</span> <%= "#{record.author.full_name}" %></p>
+    <p><span>Book:</span> <%= "#{record.book.title}" %></p>
+    <p><span>Price:</span> U$<%= record.book.price %></p>
+    <p><span>Published?</span> <%= record.book.published %></p>
+    <p><span>Quantity:</span> <%= record.book.quantity %></p>
+    <p class="btn btn-dark"><%= link_to "Buy Book", authors_book_order_index_path(record), method: :post, data: { confirm: "Buy book?" } if record.book.quantity > 0 %></p>
+    <hr>
+  <% end %>
+</div>

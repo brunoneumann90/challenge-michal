@@ -7,4 +7,8 @@ class PagesController < ApplicationController
   def dashboard
     @records = AuthorsBook.all
   end
+
+  def shopping_cart
+    @orders = current_user.orders
+  end
 end

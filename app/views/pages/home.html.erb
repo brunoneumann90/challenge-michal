@@ -2,5 +2,9 @@
   <h1>Bookstore</h1>
   <span>Find some original books here!</span>
   <hr>
-  <p class="btn btn-dark"><%= link_to "Go to our Dashboard", dashboard_path, class: "nav-link" %></p>
+  <% if current_user.admin? %>
+    <p class="btn btn-dark"><%= link_to "Go to our Dashboard", dashboard_path, class: "nav-link" %></p>
+  <% else %>
+    <p class="btn btn-dark"><%= link_to "Go to our Bookstore", authors_books_path, class: "nav-link" %></p>
+  <% end %>
 </div>
