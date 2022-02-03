@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get "dashboard", to: "pages#dashboard", as: :dashboard
+  resources :authors, only: %i[ edit update ]
+  resources :books, only: %i[ edit update ]
 end
