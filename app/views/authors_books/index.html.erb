@@ -7,7 +7,7 @@
     <p><span>Price:</span> U$<%= record.book.price %></p>
     <p><span>Published?</span> <%= record.book.published %></p>
     <p><span>Quantity:</span> <%= record.book.quantity %></p>
-    <p class="btn btn-dark"><%= link_to "Buy Book", authors_book_order_index_path(record), method: :post, data: { confirm: "Buy book?" } if record.book.quantity > 0 %></p>
+    <p class="btn btn-dark"><%= link_to "Buy Book", authors_book_orders_path(record), method: :post, data: { confirm: "Buy book?" } if record.book.quantity > 0 %></p>
     <hr>
   <% end %>
 </div>

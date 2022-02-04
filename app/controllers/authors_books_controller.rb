@@ -1,6 +1,6 @@
 class AuthorsBooksController < ApplicationController
   def index
-    @records = AuthorsBook.all
+    @records = policy_scope(AuthorsBook)
   end
 
 end

@@ -2,7 +2,6 @@ User.create!(email: "admin@admin.com", password: "123123", admin: true)
 User.create!(email: "michal@michal.com", password: "123123", admin: false)
 User.create!(email: "bruno@bruno.com", password: "123123", admin: false)
 
-
 books = Book.create([
   {
     title: 'Journey to the Center of the Earth',

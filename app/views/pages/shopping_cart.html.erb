@@ -4,6 +4,8 @@
       <p><span>Author:</span> <%= "#{order.authors_book.author.full_name}" %></p>
       <p><span>Book:</span> <%= "#{order.authors_book.book.title}" %></p>
       <p><span>Price:</span> U$<%= order.authors_book.book.price %></p>
+      <p>Bought at <%= order.created_at.strftime("%m/%d/%Y") %> at <%= order.created_at.strftime("%H:%M") %></p>
+      <%= link_to "Remove", order_path(order), method: :delete, data: { confirm: "Are you sure?" } %>
       <hr>
     <% end %>
 </div>
