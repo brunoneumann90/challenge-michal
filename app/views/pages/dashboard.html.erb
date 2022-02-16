@@ -2,6 +2,7 @@
   <h2>All books</h2>
 
   <% @records.each do |record| %>
+    <!-- No need for "" and #{} - just <%= record.author.full_name %> -->
     <p><span>Author:</span> <%= "#{record.author.full_name}" %></p>
     <p><span>Book:</span> <%= "#{record.book.title}" %></p>
     <p><span>Price:</span> U$<%= record.book.price %></p>
